@@ -1,0 +1,5 @@
+delivery_band,orders,avg_review_score
+1) 0-7 days,30550,4.41
+2) 8-14 days,37775,4.3
+3) 15-21 days,16054,4.12
+4) 22+ days,11445,3.06

@@ -1,0 +1,6 @@
+step,stage,orders,pct_of_placed,step_conversion_pct,dropped_from_prev_step
+1,Placed,99441.0,100.0,,
+2,Approved,99281.0,99.84,99.84,160.0
+3,Shipped,97658.0,98.21,98.37,1623.0
+4,Delivered,96476.0,97.02,98.79,1182.0
+5,Reviewed,98673.0,99.23,102.28,-2197.0

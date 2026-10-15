@@ -1,0 +1,8 @@
+segment,customers,pct_customers,revenue,pct_revenue,avg_monetary,avg_recency_days,avg_orders
+New / Recent,36140,38.71,5071407.73,38.36,140.33,140.0,1.0
+Big Spenders - One Time,13870,14.86,3657357.26,27.66,263.69,317.0,1.0
+Dormant One-Timers,29382,31.47,3145350.77,23.79,107.05,463.0,1.0
+Needs Attention,11165,11.96,618973.6,4.68,55.44,269.0,1.0
+Loyal Repeat,1648,1.77,407470.37,3.08,247.25,182.0,2.0
+Repeat - Lapsing,996,1.07,248690.51,1.88,249.69,431.0,2.08
+Champions,157,0.17,72247.87,0.55,460.18,167.0,3.52

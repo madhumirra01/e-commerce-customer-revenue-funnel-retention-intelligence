@@ -1,0 +1,40 @@
+table,check,rows_affected,action
+customers,raw rows,99441,info
+customers,duplicate rows on ['customer_id'],0,none found
+customers,unique customers (customer_unique_id) vs customer_id rows,3345,info: customer_id is per-ORDER; customer_unique_id is the real person
+sellers,duplicate rows on ['seller_id'],0,none found
+products,duplicate rows on ['product_id'],0,none found
+products,missing product_category_name,610,filled with 'unknown'
+products,category has no English translation,13,fell back to Portuguese name
+products,missing product_weight_g,2,left NULL (not imputed)
+products,missing product_length_cm,2,left NULL (not imputed)
+products,missing product_height_cm,2,left NULL (not imputed)
+products,missing product_width_cm,2,left NULL (not imputed)
+orders,raw rows,99441,info
+orders,duplicate rows on ['order_id'],0,none found
+orders,customer_id not found in customers,0,none found
+orders,delivered BEFORE purchase (impossible),0,delivered date set to NULL
+orders,status=delivered but no delivery date,8,kept; excluded from delivery-time metrics
+orders,status<>delivered but has delivery date,6,kept; flagged for review
+orders,approved BEFORE purchase,0,kept; flagged
+orders,order_status distribution (see value counts),99441,"info: delivered=96478, shipped=1107, canceled=625, unavailable=609, invoiced=314, processing=301, created=5, approved=2"
+orders,purchase date range,99441,info: 2016-09-04 21:15:19 to 2018-10-17 17:30:18
+order_items,"duplicate rows on ['order_id', 'order_item_id']",0,none found
+order_items,order_id not found in orders,0,none found
+order_items,product_id not found in products,0,none found
+order_items,seller_id not found in sellers,0,none found
+order_items,price <= 0,0,kept; flagged
+order_items,null price or freight,0,kept; flagged
+order_payments,"duplicate rows on ['order_id', 'payment_sequential']",0,none found
+order_payments,order_id not found in orders,0,none found
+order_payments,payment_type = not_defined,3,kept; flagged
+order_payments,payment_value = 0,9,kept; flagged
+order_payments,payment_installments = 0,2,kept; flagged
+order_reviews,raw rows,99224,info
+order_reviews,review_id repeated across rows (not a unique key in source),814,"composite key (review_id, order_id) used instead"
+order_reviews,order_id not found in orders,0,none found
+order_reviews,review_score outside 1-5,0,dropped
+order_reviews,orders with more than one review,547,kept; SQL averages per order
+cross-table,orders with zero order_items,775,kept; excluded from revenue (LEFT JOIN)
+cross-table,orders with zero payments,1,kept
+cross-table,|items+freight - payments| > 1.00 BRL,249,"info: caused by instalment interest / vouchers; revenue is defined from items, not payments"

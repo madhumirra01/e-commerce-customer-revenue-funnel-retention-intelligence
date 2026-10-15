@@ -1,0 +1,5 @@
+main_payment_type,orders,pct_orders,aov,avg_installments
+credit_card,74116,75.47,143.66,3.55
+boleto,19539,19.9,121.68,1.0
+voucher,3037,3.09,94.91,1.15
+debit_card,1514,1.54,119.62,1.0

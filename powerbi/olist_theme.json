@@ -1,0 +1,8 @@
+{
+  "name": "Olist Analytics",
+  "dataColors": ["#023047", "#2a6f97", "#219ebc", "#8ecae6", "#ffb703", "#fb8500", "#d62828", "#6c757d"],
+  "background": "#FFFFFF",
+  "foreground": "#1d3557",
+  "tableAccent": "#2a6f97",
+  "good": "#2a9d8f", "neutral": "#ffb703", "bad": "#d62828"
+}
